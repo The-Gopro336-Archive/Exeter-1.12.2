@@ -20,12 +20,12 @@ extends Button {
     private final Module module;
     private java.util.List<Item> items = new ArrayList<Item>();
     private boolean subOpen;
-    private int ĆÆiĆÆĆ;
+    private int cecil;
 
     public ModuleButton(Module module) {
         super(module.getLabel());
         this.module = module;
-        this.ĆÆiĆÆĆ = 0;
+        this.cecil = 0;
         if (!module.getProperties().isEmpty()) {
             for (Property<?> property : module.getProperties()) {
                 if (property.getValue() instanceof Boolean) {
@@ -70,15 +70,15 @@ extends Button {
 //            GlStateManager.translate(this.f$a() + (float)this.f$a() - 6.7F, this.f$E() + 7.7F, 0.0F);
 //            GlStateManager.translate(getX() + (float)getY() - 6.7F, getY() + 7.7F, 0.0F);
             GlStateManager.translate((float)(getX() + getWidth() - 6.7F), (float)(getY() + 7.7F) - 0.3F, 0.0F);
-            GlStateManager.rotate(f$a((float)this.ĆÆiĆÆĆ), 0.0F, 0.0F, 1.0F);
+            GlStateManager.rotate(f$a((float)this.cecil), 0.0F, 0.0F, 1.0F);
             RenderMethods.drawModalRect(-5, -5, 0.0F, 0.0F, 10, 10, 10, 10, 10.0F, 10.0F);
             GlStateManager.disableBlend();
             GlStateManager.popMatrix();
 
             if (this.subOpen) {
                 float height = 1.0f;
-                ++ĆÆiĆÆĆ;
-                //ĆÆiĆÆĆ++;
+                ++cecil;
+                //cecil++;
                 for (Item item : items) {
                     item.setLocation(this.x + 1.0f, this.y + (height += 15.0f));
                     item.setHeight(15);
